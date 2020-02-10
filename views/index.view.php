@@ -2,15 +2,15 @@
 
 <?php require ('partials/nav.php');?>
     <h1>Home</h1>
-    <ul>
-        <?php foreach($tasks as $task) :?>
-        <li>
-            <?php if($task->completed) :?>
-            <strike><?= $task->description;?></strike>
-            <?php else :?>
-            <?= $task->description;?>
-            <?php endif;?>
-        </li>
-        <?php endforeach;?>
-    </ul>
+
+<?php foreach ($users as $user) :?>
+    <div><?= $user->name ;?></div>
+<?php endforeach;?>
+
+<h2>Submit your name</h2>
+    <form method="post" action="/names">
+        <input type="text" name="name"/>
+        <input type="submit" value="Submit">
+    </form>
+
 <?php require ('partials/footer.php');?>
